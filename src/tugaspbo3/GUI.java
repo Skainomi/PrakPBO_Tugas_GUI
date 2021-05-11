@@ -249,6 +249,7 @@ public class GUI extends javax.swing.JFrame {
         etLebar.setText("");
         etTinggi.setText("");
         etPanjang.setText("");
+        nullifiedHasil();
     }//GEN-LAST:event_btnResetActionPerformed
 
     /**
