@@ -202,13 +202,14 @@ public class GUI extends javax.swing.JFrame {
             etPanjang.getText()
         };
         try {
-            for (int i = 0; i < inputStrings.length; i++) {
-                input.add(Float.parseFloat(inputStrings[i]));
+            for (String inputString : inputStrings) {
+                input.add(Float.parseFloat(inputString));
             }
-            stLuasPersegi.setText(String.valueOf("Luas Persegi      : " + input.get(2) * input.get(1)));
-            stKelilingPersegi.setText(String.valueOf("Keliling Persegi      : " + 2 * (input.get(2) + input.get(1))));
-            stVolumeBalok.setText(String.valueOf("Volume Balok      : " + input.get(2) * input.get(1) * input.get(0)));
-            stLuasPermukaanBalok.setText(String.valueOf("Luas Permukaan Balok       : " + 2 * ((input.get(2) * input.get(1)) + (input.get(1) * input.get(0)) + (input.get(0) * input.get(2)))));
+            Balok balok = new Balok(input.get(2), input.get(1), input.get(0));
+            stLuasPersegi.setText(String.valueOf("Luas Persegi      : " + balok.hitungLuas()));
+            stKelilingPersegi.setText(String.valueOf("Keliling Persegi      : " + balok.hitungKeliling()));
+            stVolumeBalok.setText(String.valueOf("Volume Balok      : " + balok.hitungVolume()));
+            stLuasPermukaanBalok.setText(String.valueOf("Luas Permukaan Balok       : " + balok.hitungLuasPermukaan()));
         } catch (Exception e) {
             System.out.println("ex");
             String[] inputTitle = {
